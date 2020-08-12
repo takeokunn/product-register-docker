@@ -17,5 +17,3 @@ COPY . .
 RUN gem update bundler
 RUN bundle install --path vendor/bundle
 RUN yarn
-
-CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]

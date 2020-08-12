@@ -10,8 +10,9 @@ services:
       - '13000:3000'
     command: bundle exec puma -C config/puma.rb
     volumes:
-      - '.:/workspace'
-      - '/workspace/vendor'
+      - .:/workspace
+      - /workspace/vendor
+      - /workspace/node_modules
     environment:
       - 'DATABASE_PASSWORD=postgres'
     tty: true
