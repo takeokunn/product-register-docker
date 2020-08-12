@@ -7,15 +7,15 @@ services:
   web:
     build: .
     ports:
-      - '3000:3000'
+      - '13000:3000'
+    command: bundle exec puma -C config/puma.rb
     volumes:
-      - '.:/product-register'
+      - '.:/workspace'
+      - '/workspace/vendor'
     environment:
       - 'DATABASE_PASSWORD=postgres'
     tty: true
     stdin_open: true
-    depends_on:
-      - db
     links:
       - db
   db:
