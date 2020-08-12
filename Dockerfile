@@ -4,7 +4,8 @@ ENV LANG C.UTF-8
 RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
 
 RUN apt-get update -qq
-RUN apt-get -y install --reinstall nodejs postgresql-client gpg apt-transport-https gpg-agent curl ca-certificates datadog-agent
+RUN apt-get update && apt-get install -y build-essential libpq-dev nodejs postgresql-client
+
 RUN npm i -g yarn
 
 ENV APP_PATH /workspace
